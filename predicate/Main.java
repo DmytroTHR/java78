@@ -19,7 +19,9 @@ public class Main {
 
         List<Integer> list = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
         List<Integer> evenOnly = list.stream().filter(isEven).collect(Collectors.toList());
+        List<Integer> oddGreaterThan5 = list.stream().filter(isEven.negate().and(i -> i > 5)).collect(Collectors.toList());
         System.out.println("Even numbers from 1 to 10: " + evenOnly);
+        System.out.println("Odd numbers greater than 5 from 1 to 10: " + oddGreaterThan5);
 
         Predicate<String> equalHello = Predicate.isEqual("Hello");
         System.out.println("Is 'hello' equal to 'Hello'? " + equalHello.test("hello"));
