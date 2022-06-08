@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Random;
 import java.util.Set;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -43,6 +42,18 @@ public class Main {
         Map<Boolean, List<Integer>> greater20 = numbers.stream()
                 .collect(Collectors.partitioningBy(n -> n > 20));
         System.out.println(greater20);
+
+        List<Integer> nums = Arrays.asList(11, 12, 11, 2, 12, 25, 3, 6);
+        List<Integer> oddSquaresSorted = nums.stream()
+                .filter(n->n%2==1)
+                .distinct()
+                .map(n->n*n)
+                .sorted()
+                .collect(Collectors.toList());
+        System.out.println(oddSquaresSorted);
+
+        List<String> names2 = Arrays.asList("John", "Paul", "Vova", "Petya");
+        names2.parallelStream().forEach(System.out::println);
 
     }
 }

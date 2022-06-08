@@ -1,6 +1,5 @@
 package watchservice;
 
-import java.nio.file.FileSystem;
 import java.nio.file.FileSystems;
 import java.nio.file.Path;
 import java.nio.file.Paths;
