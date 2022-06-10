@@ -1,8 +1,6 @@
 package method_reference;
 
 import java.util.function.BiPredicate;
-import java.util.function.IntFunction;
-import java.util.function.IntUnaryOperator;
 import java.util.function.ToIntFunction;
 
 public class Main {
