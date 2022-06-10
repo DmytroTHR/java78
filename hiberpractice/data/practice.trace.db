@@ -1,0 +1,49 @@
+2022-06-10 17:51:05 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "create table TransactionHistory \000d\000a    [*]transactionId int,\000d\000a    accountNumber int,\000d\000a    name varchar(50),\000d\000a    transactionType varchar(12),\000d\000a    amount float\000d\000a "; SQL statement:
+create table TransactionHistory 
+    transactionId int,
+    accountNumber int,
+    name varchar(50),
+    transactionType varchar(12),
+    amount float
+  [42000-212]
+2022-06-10 17:56:10 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "TRANSACTONHISTORY" not found; SQL statement:
+select * from transactonhistory [42102-212]
+2022-06-10 18:13:39 database: flush
+org.h2.message.DbException: General error: "org.h2.mvstore.MVStoreException: The file is locked: /home/administrator/Work/java_78/hiberpractice/data/practice.mv.db [2.1.212/7]" [50000-212]
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.message.DbException.convert(DbException.java:395)
+	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:124)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:3349)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:590)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:466)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:4118)
+	at org.h2.mvstore.db.Store.<init>(Store.java:133)
+	at org.h2.engine.Database.<init>(Database.java:324)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:338)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:122)
+	at org.h2.Driver.connect(Driver.java:59)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:677)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:228)
+	at hiberpractice.Hibernate.<init>(Hibernate.java:31)
+	at hiberpractice.Hibernate.getConnection(Hibernate.java:27)
+	at hiberpractice.Application.main(Application.java:12)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: General error: "org.h2.mvstore.MVStoreException: The file is locked: /home/administrator/Work/java_78/hiberpractice/data/practice.mv.db [2.1.212/7]" [50000-212]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:554)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	... 20 more
+Caused by: org.h2.mvstore.MVStoreException: The file is locked: /home/administrator/Work/java_78/hiberpractice/data/practice.mv.db [2.1.212/7]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:1004)
+	at org.h2.mvstore.FileStore.open(FileStore.java:163)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:449)
+	... 14 more
+2022-06-10 18:13:57 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "TRANSACTIONHISTORYWHERE" not found; SQL statement:
+select * from TransactionHistorywhere transactionId = 2 [42102-212]
+2022-06-10 18:16:40 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "DELETE [*]* FROM TRANSACTIONHISTORY"; expected "identifier"; SQL statement:
+DELETE * FROM TRANSACTIONHISTORY [42001-212]
