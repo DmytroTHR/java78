@@ -1,6 +1,5 @@
 {
     "java.project.referencedLibraries": [
-        "lib/**/*.jar",
-        "/home/administrator/Downloads/h2-2.1.212.jar"
+        "hiberpractice/data/h2-2.1.212.jar"
     ]
 }
